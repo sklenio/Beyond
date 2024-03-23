@@ -1,40 +1,34 @@
 using UnityEngine;
 
-public class RespawnObject : MonoBehaviour
+public class TeleportToRespawn : MonoBehaviour
 {
-    public Transform respawnPoint; // Assign the respawn point in the Inspector
-    public float returnSpeed = 5f; // Adjust the speed as needed
+    public Transform respawnPoint;
+    public float teleportDistanceThreshold = 20f;
+    public GameObject visualEffect; // The visual effect to be instantiated when teleporting
+    private Rigidbody rb; // Reference to the Rigidbody component
 
-    private Rigidbody rb;
-    private bool isReturning = false;
-
-    private void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if (other.CompareTag("Interactable"))
-        {
-            isReturning = true;
-        }
-    }
+        // Calculate the distance between the object and the respawn point
+        float distanceToRespawn = Vector3.Distance(transform.position, respawnPoint.position);
 
-    private void Update()
-    {
-        if (isReturning)
+        // Check if the object is beyond the teleport distance threshold
+        if (distanceToRespawn > teleportDistanceThreshold)
         {
-            Vector3 direction = (respawnPoint.position - transform.position).normalized;
-            rb.MovePosition(transform.position + direction * returnSpeed * Time.deltaTime);
+            // Teleport the object to the respawn point
+            transform.position = respawnPoint.position;
 
-            // If the object is close enough to the respawn point, stop returning and reset its velocity
-            if (Vector3.Distance(transform.position, respawnPoint.position) < 0.1f)
-            {
-                isReturning = false;
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-            }
+            // Stop the object's movement
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+            // Instantiate the visual effect at the respawn point
+            Instantiate(visualEffect, respawnPoint.position, Quaternion.identity);
         }
     }
 }

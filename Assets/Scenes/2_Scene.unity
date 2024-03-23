@@ -8375,6 +8375,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4616165200164398447, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
   m_PrefabInstance: {fileID: 1289056246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1290372357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290372358}
+  m_Layer: 0
+  m_Name: RespawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1290372358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290372357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2991896911459612469}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1327330174
 GameObject:
   m_ObjectHideFlags: 0
@@ -19792,6 +19823,7 @@ Transform:
   - {fileID: 1084091470002776103}
   - {fileID: 235184214}
   - {fileID: 604367606304239380}
+  - {fileID: 1290372358}
   m_Father: {fileID: 1059947962}
   m_LocalEulerAnglesHint: {x: 0, y: 1.564, z: 0}
 --- !u!114 &3347311275593733797
@@ -22815,6 +22847,7 @@ GameObject:
   - component: {fileID: 6559198439968760659}
   - component: {fileID: 6559198439968760668}
   - component: {fileID: 2096587127}
+  - component: {fileID: 6559198439968760671}
   m_Layer: 0
   m_Name: Interactable Kinematic Torus
   m_TagString: Untagged
@@ -22822,6 +22855,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6559198439968760671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559198439968760670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0908b552cd1c350439372d671f396abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 1290372358}
+  teleportDistanceThreshold: 20
+  visualEffect: {fileID: 0}
 --- !u!222 &6582129604195680081
 CanvasRenderer:
   m_ObjectHideFlags: 0
