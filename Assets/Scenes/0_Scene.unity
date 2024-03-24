@@ -9130,7 +9130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1446827686}
   - component: {fileID: 1446827687}
-  - component: {fileID: 1446827688}
   m_Layer: 0
   m_Name: Greeting Prompt
   m_TagString: Untagged
@@ -9249,21 +9248,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1446827688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446827685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 152abf6c66034fb47a14be7366d96d58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 1446827687}
-  audioClip: {fileID: 8300000, guid: 384cc9991c7eb73448943cf009578b13, type: 3}
-  delayInSeconds: 10
 --- !u!1 &1486677401
 GameObject:
   m_ObjectHideFlags: 0
@@ -19146,6 +19130,7 @@ GameObject:
   - component: {fileID: 1565887663878291442}
   - component: {fileID: 1565887663878291443}
   - component: {fileID: 1565887663878291444}
+  - component: {fileID: 1565887663878291445}
   m_Layer: 0
   m_Name: Teleportation Environment
   m_TagString: Untagged
@@ -19216,7 +19201,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf508380f8a935449be4fe846e9716c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playSound: {fileID: 1226432777}
+  delayTime: 10
+  audioSource1: {fileID: 1446827687}
+  audioSource2: {fileID: 1226432777}
+--- !u!114 &1565887663878291445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565887663878291440}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152abf6c66034fb47a14be7366d96d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1446827687}
+  audioClip: {fileID: 8300000, guid: 384cc9991c7eb73448943cf009578b13, type: 3}
+  delayInSeconds: 10
 --- !u!1001 &1645087707337746736
 PrefabInstance:
   m_ObjectHideFlags: 0
